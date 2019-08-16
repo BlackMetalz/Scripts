@@ -7,7 +7,7 @@
 current_date=`date +"%Y-%m-%d"` 
 
 # compress
-tar -czvf /data/checkmk_backup/omd_$current_date.tar.gz /omd/sites/adtech/etc
+tar -czvf /data/checkmk_backup/omd_$current_date.tar.gz /omd/sites/example/etc
 
 # Delete backup older than 30 days
 find /data/checkmk_backup/ -type f -mtime +30 -exec rm -f {} \;
