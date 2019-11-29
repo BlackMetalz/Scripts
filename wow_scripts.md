@@ -18,7 +18,7 @@ screen -mdS world ./restarter.sh
 
 ```
 
-# 3. Debug script with relwithdebinfo
+# 3. Debug script with relwithdebinfo build 
 
 ```
 #! /bin/bash
