@@ -12,7 +12,7 @@ if [ $# -lt 1 ] ; then
 fi
 
 if [ $# -ge 2 ] ; then
-  csplit -s -ftable $1 "/-- Table structure for table/" "%-- Table structure for table `$2`%" "/-- Table structure for table/" "%40103 SET TIME_ZONE=@OLD_TIME_ZONE%1"
+  csplit -s -ftable $1 "/-- Table structure for table/" "%-- Table structure for table \`$2\`%" "/-- Table structure for table/" "%40103 SET TIME_ZONE=@OLD_TIME_ZONE%1"
 else
   csplit -s -ftable $1 "/-- Table structure for table/" {*}
 fi
@@ -30,7 +30,7 @@ else
 fi
 
 for FILE in `ls -1 table*`; do
-  NAME=`head -n1 $FILE | cut -d$'x60' -f2`
+  NAME=`head -n1 $FILE | cut -d$'\x60' -f2`
   cat head $FILE foot > "$NAME.sql"
 done
 
