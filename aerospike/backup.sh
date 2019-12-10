@@ -3,7 +3,7 @@
 # Script by kienlt
 # Required aerospike and aerospike tool installed in this machine
 # namespace folder automatically created
-
+# This script only support single port 3000 as default port
 # Init Varriables
 date=$(date -I)
 backup_path=/data/backup/
