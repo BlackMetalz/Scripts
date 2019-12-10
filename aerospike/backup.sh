@@ -14,7 +14,7 @@ namespaces=$(aql -o raw -c "show namespaces"  | sort -u | grep -oE "\"(.*)\"" | 
 
 # Do backup 
 for ns in $namespaces
-  do asbackup --namespace $ns --directory ${full_path}${ns}_${date}
+  do asbackup --namespace $ns --directory ${backup_path}${ns}_${date}
 done
 
 # Remove backup older than 7 days
