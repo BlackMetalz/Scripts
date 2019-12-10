@@ -9,6 +9,9 @@ date=$(date -I)
 backup_path=/data/backup/
 namespaces=$(aql -o raw -c "show namespaces"  | sort -u | grep -oE "\"(.*)\"" | tr -d "\"")
 
+# output example of command: echo $namespaces
+# ``` foo bar ```
+
 # Do backup 
 for ns in $namespaces
   do asbackup --namespace $ns --directory ${full_path}${ns}_${date}
