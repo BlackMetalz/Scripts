@@ -15,12 +15,12 @@ namespaces=$(aql -h $host -p $port -o raw -c "show namespaces"  | sort -u | grep
 if [ -d "${backup_path}" ]
 then
   for ns in $namespaces
-    do asbackup --namespace $ns --directory ${backup_path}${ns}_${date}
+    do asbackup -h $host -p $port --namespace $ns --directory ${backup_path}${ns}_${date}
   done
 else
   mkdir -p $backup_path
   for ns in $namespaces
-    do asbackup --namespace $ns --directory ${backup_path}${ns}_${date}
+    do asbackup -h $host -p $port --namespace $ns --directory ${backup_path}${ns}_${date}
   done
 fi
 
