@@ -3,6 +3,7 @@
 ```
 net user /add youruser yourpass
 net localgroup administrators youruser /add
+net localgroup "Remote Desktop Users" youruser /add
 wmic useraccount where "name='youruser'" set passwordexpires=false
 ```
 
