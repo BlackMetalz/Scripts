@@ -6,5 +6,5 @@ if grep -q "nameserver 192.168.23.63" /etc/resolv.conf; then
         exit 0
 else
         echo "DNS Kafka not found"
-        exit 1
+        exit 2
 fi
