@@ -1,6 +1,5 @@
--- Check if file contain "nameserver 8.8.8.8", return exit 0, otherwise return code 2
-
-```
+// Check if file contain "nameserver 8.8.8.8", return exit 0, otherwise return code 2
+// Remember to build it
 package main
 
 import (
@@ -42,6 +41,3 @@ func main() {
 
 }
 
-```
-
-remember to build 
