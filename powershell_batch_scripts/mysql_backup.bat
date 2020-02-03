@@ -1,6 +1,4 @@
 :: Credit https://github.com/improy/MySQL-DataBase-backup-using-windows-bat-file
-:: With few custom
-
 @echo off
 
 :: make sure to change the settings from line 4-9
