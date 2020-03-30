@@ -4,7 +4,7 @@ REM 10.3.50.39 is my kms server
 REM GET WINDOWS_VERSION
 FOR /F "usebackq tokens=3,4,5,6,7,8" %%a IN (`REG query "hklm\software\microsoft\windows NT\CurrentVersion" /v ProductName`) DO set win_ver=%%a %%b %%c %%d %%e %%f
 
-FOR /F "delims= tokens=1,2,3,4,5,6 " %%a IN ("%win_ver%") DO set win_version=%%a %%b %%c %%d %%e %%f
+FOR /F "tokens=1,2,3,4,5,6 delims= " %%a IN ("%win_ver%") DO set win_version=%%a %%b %%c %%d %%e %%f
 
 REM echo %win_version%
 
@@ -35,7 +35,7 @@ if "%win_ver%"=="Windows Server 2012 R2 Server Standard" (
   GOTO :active_fnc
 )
 
-REM THIS ONLY ACTIVATE after we use GOTO :active_fnc
+
 :active_fnc
 slmgr.vbs //b /ipk %key%
 slmgr.vbs //b /skms 10.3.50.39
