@@ -35,7 +35,7 @@ if "%win_ver%"=="Windows Server 2012 R2 Server Standard" (
   GOTO :active_fnc
 )
 
-
+REM THIS ONLY ACTIVATE after we use GOTO :active_fnc
 :active_fnc
 slmgr.vbs //b /ipk %key%
 slmgr.vbs //b /skms 10.3.50.39
